@@ -122,13 +122,13 @@ a:active {
     font-weight: var(--font-weight-bold);
     margin: var(--section-tagline-margin);
 }
-.row {
+ul.row {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 .col-1-3 {
-    width: 33.3%;
+    width: 33.33%;
     float: left;
     padding: 0.5rem;
 }
