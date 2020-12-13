@@ -151,7 +151,7 @@ ul.row {
     margin-right: auto;
 }
 .row::after {
-    content: none;
+    content: "";
     display: table;
     clear:both;
 }
