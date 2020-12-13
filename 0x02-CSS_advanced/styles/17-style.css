@@ -63,11 +63,7 @@ a:active {
     color: var(--color-primary);
 }
 .section {
-    padding-left: var(--section-padding);
-    padding-right: var(--section-padding);
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
-}
+    padding: var(--section-padding);
 .section-header {
     text-align: var(--section-header-align);
     padding: var(--section-header-padding);
