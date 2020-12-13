@@ -138,7 +138,7 @@ ul.row {
     padding: 0.5rem;
 }
 .footer-copyright {
-    margin: none;
+    margin: 0;
     font-size: var(--font-size-small);
     color: var(--text-color);
 }
