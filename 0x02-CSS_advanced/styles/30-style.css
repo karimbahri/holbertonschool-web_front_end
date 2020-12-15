@@ -253,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
     right: -0.1rem;
     z-index: 1;
 }
-.card-inner:hover {
+.card-work:hover .card-inner {
     background-color: rgba(0, 0, 0, 0.7);
 }
 .card-work .card-title {
@@ -271,8 +271,8 @@ h1, h2, h3, h4, h5, h6 {
 .card-work .card-title a::after {
     position: absolute;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
     bottom: 0;
     content: "";
 }
