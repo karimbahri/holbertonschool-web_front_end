@@ -1,0 +1,14 @@
+/*nested declaration*/
+$body-size: 14px;
+$h1-body: 16px;
+$h1-class: 12px;
+
+body {
+    font-size: $body-size;
+    h1 {
+        font-size: $h1-body;
+    }
+    &.smaller {
+        font-size: $h1-class;
+    }
+}
