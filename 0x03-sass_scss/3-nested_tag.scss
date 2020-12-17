@@ -1,8 +1,9 @@
 /*set margin and padding*/
 $p-margin-size: 10px;
+$body-no-size: 0px;
 body {
-    margin: 0;
-    padding: 0;
+    margin: $body-no-size;
+    padding: $body-no-size;
     p {
         margin: $p-margin-size;
     }
