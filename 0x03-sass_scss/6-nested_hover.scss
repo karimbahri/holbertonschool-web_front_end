@@ -1,6 +1,10 @@
 /*set color in hover state*/
-$button-tag: #FF0000;
+$button-color: #FF0000;
+$button-hover-color: #00FF00; 
 
-button:hover {
+button {
     color: $button-tag;
+    &:hover {
+        color: $button-hover-color;
+    }
 }
