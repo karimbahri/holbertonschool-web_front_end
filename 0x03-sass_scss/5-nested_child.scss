@@ -1,0 +1,9 @@
+/*nested color for child*/
+$body-color: #3D3D3D;
+$child-cilor: #FF0000;
+body {
+    color: $body-color;
+    > .red {
+        color: $child-cilor;
+    }
+}
