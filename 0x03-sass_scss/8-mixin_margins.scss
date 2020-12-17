@@ -1,0 +1,14 @@
+/*margin using mixin*/
+$margin_body: 10px;
+$margin_div: 15px;
+
+@mixin set_marg($margin) {
+    margin-left: $margin;
+    margin-right: $margin;
+}
+body {
+    @include set_marg($margin_body);
+}
+div {
+    @include set_marg($margin_div);
+}
