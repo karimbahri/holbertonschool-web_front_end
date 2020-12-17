@@ -1,0 +1,14 @@
+/*extend class style*/
+$success_color :#00FF00;
+$warning_color: #FF0000;
+.info {
+    font-size: 12px;
+}
+.success {
+    @extend .info;
+    color: $success_color;
+}
+.warning {
+    @extend .info;
+    color: $warning_color;
+}
