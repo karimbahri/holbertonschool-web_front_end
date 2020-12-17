@@ -1,0 +1,11 @@
+/*set color body and p using variable*/
+$dark-color: #3D3D3D;
+$dark-backgournd-color: #6D6D6D;
+body {
+    color: $dark-color;
+    background-color: $dark-backgournd-color;
+}
+p {
+    color: $dark-color;
+    background-color: $dark-backgournd-color;
+}
