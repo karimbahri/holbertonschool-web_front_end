@@ -38,8 +38,8 @@ const main = function() {
     body.appendChild(dark);
     body.appendChild(scream);
 
-    document.getElementById('spooky').onclick = spooky;
-    document.getElementById('dark').onclick = darkMode;
-    document.getElementById('scream').onclick = screamMode;
+    document.getElementById('spooky').addEventListener('click', spooky);
+    document.getElementById('dark').addEventListener('click', darkMode);
+    document.getElementById('scream').addEventListener('click', screamMode);
 }
 main();
