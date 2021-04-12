@@ -9,7 +9,7 @@ const user = {
     occupation: 'Engineer',
 }
 const logWelcomeUser = welcomeString => {
-    console.log(`${welcomeString}, ${this.firstName}. Your occupation is: ${this.occupation}`);
+    console.log(`${welcomeString}, ${user.firstName}. Your occupation is: ${user.occupation}`);
 }
 const bindLogWelcomeUser = logWelcomeUser.bind(user);
 bindLogWelcomeUser('Welcome');
