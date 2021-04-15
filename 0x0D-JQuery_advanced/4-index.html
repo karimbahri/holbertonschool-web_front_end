@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+
+    </head>
+
+    <body>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+        <script type="application/javascript">
+            const createFamilyTree = function () {
+                $('body').append('<table></table>');
+                $('table').append('<thead></thead>');
+                $('thead').append('<th id="t1"></th>');
+                $('thead').append('<th id="t2"></th>');
+                $('#t1').text('Firstname');
+                $('#t2').text('Lastname');
+                $('table').append('<tbody></tbody>');
+                $('tbody').append('<tr id="tr1"></tr>');
+                $('#tr1').append('<td id="td1"></td>');
+                $('#tr1').append('<td id="td2"></td>');
+                $('#td1').text('Guillaume');
+                $('#td2').text('Salva');
+
+                $('tbody').append('<tr id="tr2"></tr>');
+                $('#tr2').append('<td id="td3"></td>');
+                $('#tr2').append('<td id="td4"></td>');
+                $('#td3').text('Paulette');
+                $('#td4').text('Salva');
+
+                $('tbody').append('<tr id="tr3"></tr>');
+                $('#tr3').append('<td id="td5"></td>');
+                $('#tr3').append('<td id="td6"></td>');
+                $('#td5').text('Antoine');
+                $('#td6').text('Salva');
+                }
+            const replaceFamilyTree = function() {
+                $('tbody').html('<tr><td>Gerard</td><td>Bonissa</td></tr>');
+            }
+            createFamilyTree();
+            replaceFamilyTree();
+        </script>
+    </body>
+
+</html>
