@@ -16,7 +16,31 @@
 
         <script type="application/javascript">
             const createFamilyTree = function () {
-                $('body').append('<table></table>'.append('<thead></thead>'.append('<th></th>'.text('Firstname'),'<th></th>'.text('Lastname')), '<tbody></tbody>'.append(' <tr><td>Guillaume</td><td>Salva</td></tr>','<tr><td>Paulette</td><td>Salva</td></tr>','<tr><td>Antoine</td><td>Salva</td></tr>')));
+                $('body').append('<table></table>');
+                $('table').append('<thead></thead>');
+                $('thead').append('<th id="t1"></th>');
+                $('thead').append('<th id="t2"></th>');
+                $('#t1').text('Firstname');
+                $('#t2').text('Lastname');
+                $('table').append('<tbody></tbody>');
+                $('tbody').append('<tr id="tr1"></tr>');
+                $('#tr1').append('<td id="td1"></td>');
+                $('#tr1').append('<td id="td2"></td>');
+                $('#td1').text('Guillaume');
+                $('#td2').text('Salva');
+
+                $('tbody').append('<tr id="tr2"></tr>');
+                $('#tr2').append('<td id="td3"></td>');
+                $('#tr2').append('<td id="td4"></td>');
+                $('#td3').text('Paulette');
+                $('#td4').text('Salva');
+
+                $('tbody').append('<tr id="tr3"></tr>');
+                $('#tr3').append('<td id="td5"></td>');
+                $('#tr3').append('<td id="td6"></td>');
+                $('#td5').text('Antoine');
+                $('#td6').text('Salva');
+                
                 }
             createFamilyTree();
         </script>
