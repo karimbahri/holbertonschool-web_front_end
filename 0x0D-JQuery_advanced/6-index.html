@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+
+    </head>
+
+    <body>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+        <script type="application/javascript">
+            const createFamilyTree = function () {
+                $('body').append('<table>\
+                            <thead><th>Firstname</th><th>Lastname</th></thead>\
+                            <tbody></tbody>\
+                    </table>');
+            }
+            const addNewMember = function (firstName, lastName, position) {
+                const cl = `tr-${firstName}`
+                const x = `x-${firstName}`;
+                if (position === 'before')
+                    $('tbody').prepend(`<tr class='${cl}'><td>${firstName}</td><td>${lastName}</td><td class="${x}">(x)</td></tr>`);
+                else
+                    $('tbody').append(`<tr class='${cl}'><td>${firstName}</td><td>${lastName}</td><td class="${x}">(x)</td></tr>`);
+                $(`.${x}`).css('background-color', 'yellow');
+                $(`.${x}`).click(function() {
+                    //alert(cl);
+                    $(`.${cl}`).remove();
+                })
+            }
+            const createForm = function () {
+                $('table').before('<input type="text" id="FName"></input>');
+                $('#FName').after('<input type="text" id="LName"></input>');
+                $('#LName').after('<select><option value="before">before</option><option value="after">after</option></select>');
+                $('select').after('<input type="Submit" class="btn"></input>');
+                $('.btn').click(function () {
+                    addNewMember($('#FName').val(), $('input:nth-of-type(2)').val(), $('option:selected').val());
+                })
+            }
+            createFamilyTree();
+            createForm();
+            addNewMember('Guillaume', 'Salva', 'before');
+            addNewMember('Arielle', 'Snizt', 'before');
+            addNewMember('Fanette', 'Snizt', 'before');
+            addNewMember('Gerard', 'Snizt');
+            addNewMember('Victor', 'Salva');
+        </script>
+    </body>
+
+</html>
