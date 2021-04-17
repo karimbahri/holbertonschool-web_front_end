@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+
+    </head>
+
+    <body>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+        <script type="application/javascript">
+            const createSearchForm = function() {
+                $('body').append('<input type="text" class="textField"></input>');
+                $('body').append('<input type="submit" class="btn"></input>')
+                $('.btn').click(function(){
+                    queryWikipedia($('.textField').val());
+                })
+                $('body').append('<ul></ul>');
+            }
+            const addNewArticle = function (id, title, snippet) {
+                const li = $('<li></li>')
+                li.append(`<p><span>${id} -</span><b>${title}</b></p>`);
+                li.append(`<p>${snippet}</p>`);
+                $('ul').append(li);
+            }
+            const queryWikipedia = function (search) {
+                let link = 'https://en.wikipedia.org/w/api.php';
+                const args = {
+                    list: 'search',
+                    action: 'query',
+                    srsearch: search,
+                    format: 'json'
+                };
+                link += '?origin=*';
+                Object.keys(args).forEach(function (k) {
+                    link += `&${k}=${args[k]}`
+                    alert(link);
+                });
+                $.ajax({url: link, type: 'get', success: function(result) {
+                    $('ul').first().empty();
+                    const res = result.query.search;
+                      for (element of res) {
+                        addNewArticle(element.pageid, element.title, element.snippet)
+                    }           
+                }})
+            }
+            createSearchForm();
+        </script>
+    </body>
+
+</html>
