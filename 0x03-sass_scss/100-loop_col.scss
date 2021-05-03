@@ -1,0 +1,10 @@
+/*
+creates classes with different width using for loop
+*/
+
+@for $i from 1 to 4 {
+    $w : 100 / $i;
+    .col-#{$i} {
+        width: w;
+    }
+}
