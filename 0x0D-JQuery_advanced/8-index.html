@@ -36,8 +36,7 @@
                     list: 'search',
                     action: 'query',
                     srsearch: search,
-                    format: 'json',
-                    sroffset: offset
+                    format: 'json'
                 };
                 link += '?origin=*';
                 Object.keys(args).forEach(function (k) {
@@ -50,7 +49,7 @@
                         addNewArticle(element.pageid, element.title, element.snippet)
                     }
                     buildPagination(result.query.searchinfo.totalhits, 10, offset);    
-                }});
+                }})
             }
             const buildPagination = function (numberOfItems, itemsPerPage, currentOffset) {
                 $('#pagination').empty();
@@ -66,4 +65,5 @@
         </script>
     </body>
 
+</html>
 </html>

@@ -27,7 +27,29 @@
                     alert('Server Error');
                 })
             }
+            const buildForm = function () {
+                const f = $('<form></form>');
+                $('body').append(f);
+
+                f.append('<div><label for="author">Author</label><input type="text" id="author"></div>');
+                f.append('<div><label for="title">Title</label><textarea type="text" id="title"></textarea></div>');
+                f.append('<input type="submit" onclick="sendForm()">');
+            }
+            const sendForm = function () {
+                $('body').append('<p>About to send the query to the API</p>')
+                const d = {
+                    author: $('#author').val(),
+                    title: $('#title').val()
+                }
+                $.post('http://localhost:3000/posts', d , function(d) {
+                    addPostRow(d);
+                }).fail( function() {
+                    alert('Error sending the POST query');
+                }
+                )
+            }
             listPosts();
+            buildForm();
         </script>
     </body>
 
