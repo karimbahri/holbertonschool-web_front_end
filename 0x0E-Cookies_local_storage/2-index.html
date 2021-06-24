@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Basic HTML template</title>
+</head>
+<body>
+     <form action="">
+         <div>
+         <label for="firstname" style="display: none;">firstname</label>
+         <input type="text" id="firstname" placeholder="firstname">
+
+         <label for="email" style="display: none;">email</label>
+         <input type="email" id="email" placeholder="email">
+        
+        <button onclick="setCookies()">Log me in</button>
+        </div>
+     </form>
+     <h3>Cookies</h3>
+     <button onclick="showCookies()">Show the cookies</button>
+</body>
+<script type="application/javascript">
+    const setCookies = function () {
+        const now = new Date();
+        const f_name = document.getElementById('firstname');
+        const e_mail = document.getElementById('email');
+        document.cookie = `name=${f_name.value}; email=${e_mail.value}; expire=${now.getTime() + (24 * 36000000)}`;
+    }
+    const showCookies = function() {
+        const p = document.createElement('p');
+        p.innerHTML = `Email: ${getCookie('email')} - FirstName: ${getCookie('name')}`;
+        document.body.append(p);
+    }
+
+    const getCookie = function (name) {
+        const cookies = document.cookie.split(';');
+        console.log(cookies);
+        const cookieContent = `${name}=`;
+        for (let element of cookies) {
+            while (element[0] === ' '){
+                element = element.substring(1);
+            }
+            console.log(element);
+            console.log(cookieContent);
+            if (element.substring(0, cookieContent.length) === cookieContent)
+                return (element.substring(cookieContent.length, element.length));
+        }
+        return '';
+    }
+</script>
+</html>
