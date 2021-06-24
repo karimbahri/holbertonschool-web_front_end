@@ -22,10 +22,13 @@
 </body>
 <script type="application/javascript">
     const setCookies = function () {
-        let expire = new Date();
+        const now = new Date();
         const f_name = document.getElementById('firstname');
         const e_mail = document.getElementById('email');
-        document.cookie = `name=${f_name.value}; email=${e_mail.value}; expire=${expire.getTime() + (24 * 36000000)}`;
+        document.cookie = `name=${f_name.value};`;
+        document.cookie = `email=${e_mail.value};`
+        now.setTime(now.getTime() + (24 * 36000000));
+        document.cookie = `expire=${now};`;
     }
     const showCookies = function() {
         const p = document.createElement('p');
