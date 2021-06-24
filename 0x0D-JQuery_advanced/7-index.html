@@ -30,7 +30,7 @@
                 $('ul').append(li);
             }
             const queryWikipedia = function (search) {
-                let link = 'https://en.wikipedia.org/w/api.php';
+                let link = 'https://en.wikipedia.org/w/api.php?origin=*';
                 const args = {
                     list: 'search',
                     action: 'query',
@@ -39,8 +39,7 @@
                 };
                 link += '?origin=*';
                 Object.keys(args).forEach(function (k) {
-                    link += `&${k}=${args[k]}`
-                    alert(link);
+                    link += `&${k}=${args[k]}`;
                 });
                 $.ajax({url: link, type: 'get', success: function(result) {
                     $('ul').first().empty();

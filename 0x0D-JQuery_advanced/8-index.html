@@ -36,7 +36,8 @@
                     list: 'search',
                     action: 'query',
                     srsearch: search,
-                    format: 'json'
+                    format: 'json',
+                    sroffset: offset
                 };
                 link += '?origin=*';
                 Object.keys(args).forEach(function (k) {
@@ -49,7 +50,7 @@
                         addNewArticle(element.pageid, element.title, element.snippet)
                     }
                     buildPagination(result.query.searchinfo.totalhits, 10, offset);    
-                }})
+                }});
             }
             const buildPagination = function (numberOfItems, itemsPerPage, currentOffset) {
                 $('#pagination').empty();
