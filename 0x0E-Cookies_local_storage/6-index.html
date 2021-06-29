@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>task 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+</head>
+<body>
+    <script>
+        const p = document.createElement('p');
+        let len;
+        const addItemToCart = function (item) {
+            sessionStorage.setItem(item, true);
+        }
+        const createStore = function () {
+            const ul = document.createElement('ul');
+            // let i = 0;
+            for (element of availableItems) {
+                let li = document.createElement('li');
+                li.append(element);
+                // let li_id = `list_${i}`
+                // ul.append(`<li id='${li_id}'>${elemnt}</li>`);
+                // let li = 
+                // i++;
+                ul.appendChild(li);
+                li.addEventListener('click', function () {
+                    addItemToCart(li.textContent);
+                    console.log(sessionStorage);
+                    len = (sessionStorage.length > 0) ? sessionStorage.length - 1 : sessionStorage.length;
+                    p.textContent = `You previously had ${len} items in your cart`;
+                })
+                
+            }
+            document.body.appendChild(ul);
+        }
+        const displayCart = function () {
+            if (typeof Storage !== 'undefined') {
+                len = (sessionStorage.length > 0) ? sessionStorage.length - 1 : sessionStorage.length;
+                p.textContent = `You previously had ${len} items in your cart`;
+                document.body.appendChild(p);
+            }
+        }
+        /*----------------------------------------------------------*/
+
+        const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
+        if (typeof Storage === 'undefined') {
+            alert('Sorry, your browser does not support Web storage. Try again with a better one');
+        }
+        else {
+            createStore();
+            displayCart();
+        }
+    </script>
+</body>
+</html>
