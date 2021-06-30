@@ -21,7 +21,12 @@
             displayCart();
         }
         const removeItemfromCart = function (item) {
-            sessionStorage.removeItem(item);
+            const cart = getCartFromStorage();
+            if (cart[item])
+                cart[item]--;
+            if (!cart[item])
+                delete cart[item];
+            sessionStorage.setItem('cart', JSON.stringify(cart));
             displayCart();
         }
         const clearCart = function () {
@@ -90,8 +95,8 @@
                 for (key in cart) {
                     const li = document.createElement('li');
                     console.log(cart[key]);
-                    console.log('-- ', sessionStorage);
-                    li.insertAdjacentHTML('beforeend', `${key} x ${cart[key]} <span onclick='removeItemfromCart(${key})'>(remove)`);
+                    console.log('-- ', key);
+                    li.insertAdjacentHTML('beforeend', `${key} x ${cart[key]} <span onclick='removeItemfromCart("${key}")'>(remove)`);
                     ul.appendChild(li);
                 }
                 div.appendChild(ul)
